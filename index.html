@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Green Acres - Lawn Care Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -33,7 +33,6 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
       letter-spacing: 5px;
       text-shadow: 1px 1px 4px #1f391f;
-      user-select: none;
       transition: transform 0.2s;
     }
 
@@ -41,6 +40,7 @@
       background-color: #394e39;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 50px;
       padding: 22px 0;
       font-size: 1.4em;
@@ -93,8 +93,8 @@
       padding: 40px 30px;
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s ease;
       background: linear-gradient(135deg, #2d4032, #465a43);
+      transition: background-color 0.3s ease;
     }
 
     section:hover {
@@ -119,8 +119,6 @@
       max-width: 760px;
       margin: auto;
       line-height: 1.6;
-      color: #d3f0d3;
-      user-select: text;
     }
 
     ul {
@@ -129,7 +127,6 @@
       font-size: 1.3em;
       max-width: 760px;
       margin: auto;
-      color: #d3f0d3;
     }
 
     ul li {
@@ -152,7 +149,6 @@
       transition: all 0.3s ease;
       box-shadow: 0 6px 12px #d6a828;
       text-decoration: none;
-      user-select: none;
     }
 
     .button:hover {
@@ -172,8 +168,7 @@
       background: #2e4b2e;
       padding: 20px;
       box-shadow: inset 0 3px 8px #1e331e;
-      user-select: none;
-      position: relative; /* for absolute children */
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -183,7 +178,7 @@
     .footer-content {
       width: 100%;
       max-width: 1100px;
-      position: relative; /* for absolute children */
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -198,7 +193,7 @@
 
     .footer-left img {
       width: 120px;
-      height: 100px; /* fixed missing unit */
+      height: 100px;
       object-fit: contain;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -211,12 +206,26 @@
     }
 
     .footer-right-text {
-      position: static;
       margin-top: 10px;
       font-size: 0.9em;
       color: #c9eac9;
       font-weight: 600;
       text-align: center;
+    }
+
+    .footer-right-image {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .footer-right-image img {
+      width: 120px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
     @media (max-width: 600px) {
@@ -251,23 +260,14 @@
       .footer-left {
         position: static;
         margin-bottom: 10px;
+        transform: none;
       }
 
       .footer-right-image {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.footer-right-image img {
-  width: 120px;
-  height: 180px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
+        position: static;
+        margin-top: 10px;
+        transform: none;
+      }
     }
   </style>
 </head>
@@ -316,32 +316,31 @@
     <div class="section-divider"></div>
 
     <section id="credits" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-      <p style="font-size: 1.3em; max-width: 400px; margin: 0; color: #d3f0d3;">
+      <p style="font-size: 1.3em; max-width: 400px; margin: 0;">
         Made by <strong>ARstudios</strong> and <strong>Green Iguana Studios</strong>
       </p>
     </section>
   </main>
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-left">
-      <img src="Ar Studios.png" alt="ARstudios Logo" />
-    </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="Ar Studios.png" alt="ARstudios Logo" />
+      </div>
 
-    <div class="footer-center">
-      &copy; 2025 Green Acres.
-      <div class="footer-right-text">
-        More From <strong>ARstudios</strong> and <strong>Green Iguana Studios</strong> — 
-        <a href="https://github.com/arstudios750" target="_blank" rel="noopener noreferrer">click here!</a>
+      <div class="footer-center">
+        &copy; 2025 Green Acres.
+        <div class="footer-right-text">
+          More From <strong>ARstudios</strong> and <strong>Green Iguana Studios</strong> — 
+          <a href="https://github.com/arstudios750" target="_blank" rel="noopener noreferrer">click here!</a>
+        </div>
+      </div>
+
+      <div class="footer-right-image">
+        <img src="elon.png" alt="Green Iguana Studios logo" />
       </div>
     </div>
-
-    <div class="footer-right-image">
-      <img src="elon.png" alt="Green Iquana studios logo" />
-    </div>
-  </div>
-</footer>
-
+  </footer>
 
 </body>
 </html>
