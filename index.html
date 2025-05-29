@@ -26,28 +26,57 @@
     }
 
     header {
-  background-color: #2e4b2e;
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 3.2em;
-  font-weight: 900;
-  color: #e6ffe6;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  letter-spacing: 5px;
-  text-shadow: 1px 1px 4px #1f391f;
-  transition: transform 0.2s;
-}
-header:hover {
-  animation: bounce-once 0.35s ease;
-  animation-fill-mode: forwards;
-}
-@keyframes bounce-once {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-12px); }
-  60%  { transform: translateY(8px); }
-  100% { transform: translateY(0); }
-}
+      background-color: #2e4b2e;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 3.2em;
+      font-weight: 900;
+      color: #e6ffe6;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      letter-spacing: 5px;
+      text-shadow: 1px 1px 4px #1f391f;
+      transition: transform 0.2s;
+    }
 
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .header-logo {
+      width: 60px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .header-logo:hover {
+      transform: scale(1.1);
+    }
+
+    .header-title {
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+      text-shadow: inherit;
+      letter-spacing: inherit;
+    }
+
+    header:hover {
+      animation: bounce-once 0.35s ease;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes bounce-once {
+      0%   { transform: translateY(0); }
+      30%  { transform: translateY(-12px); }
+      60%  { transform: translateY(8px); }
+      100% { transform: translateY(0); }
+    }
 
     nav {
       background-color: #394e39;
@@ -252,6 +281,10 @@ header:hover {
         padding: 25px 15px;
       }
 
+      .header-logo {
+        width: 40px;
+      }
+
       main {
         padding: 40px 20px 60px;
       }
@@ -287,7 +320,11 @@ header:hover {
 <body>
 
   <header>
-    Green Acres
+    <div class="header-content">
+      <img src="green acres.png" alt="Green Acres Logo Left" class="header-logo">
+      <span class="header-title">Green Acres</span>
+      <img src="green acres.png" alt="Green Acres Logo Right" class="header-logo">
+    </div>
   </header>
 
   <nav>
